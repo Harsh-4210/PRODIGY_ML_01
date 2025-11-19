@@ -1,98 +1,84 @@
+Here is the README for your `PRODIGY_ML_01` repository.
 
-# House Price Prediction — Linear Regression
+-----
 
-## Project Overview
-A simple linear regression model to predict house prices using fundamental features such as square footage, number of bedrooms, and number of bathrooms. This project demonstrates end-to-end workflow including exploratory data analysis, feature selection, model training, evaluation, and basic model persistence.
+# PRODIGY\_ML\_01: House Price Prediction
 
-## Dataset
-This project uses the Kaggle **House Prices - Advanced Regression Techniques** dataset:
+A machine learning project that implements a linear regression model to predict residential house prices based on property features. This model helps in understanding the relationship between various housing characteristics (like square footage, number of bedrooms/bathrooms) and their market value.
 
-https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+## 📌 Project Overview
 
-> Note: Do **not** upload the full Kaggle dataset to GitHub. Keep data locally or provide download instructions / a small sample.
+Predicting housing prices is a fundamental problem in real estate analytics. In this project, we use the "House Price India" dataset to build a predictive model using Linear Regression.
 
-## Key Features
-- Square footage / living area
-- Number of bedrooms
-- Number of bathrooms
-- Basic feature engineering (if applied)
-- Train / test split and model evaluation (MAE, RMSE, R²)
+**Key Goals:**
 
-## Project Structure
-HOUSE_PRICE_PREDICTION/
-├── data/ # sample data, DO NOT commit full dataset
-├── notebooks/ # EDA and model notebooks (e.g., Task_01_HousePricePrediction.ipynb)
-├── src/
-│ ├── preprocess.py # data cleaning & feature engineering
-│ ├── train.py # training script
-│ ├── model.py # model definition & utilities
-│ └── predict.py # single-sample prediction script
-├── models/ # saved models (.pkl or .joblib)
-├── results/ # plots, evaluation metrics
-├── requirements.txt
-├── README.md
-└── .gitignore
+  * Preprocess and clean the housing data.
+  * Analyze the correlation between different features and house prices.
+  * Train a Linear Regression model to predict prices for new data.
+  * Evaluate the model's performance using standard metrics.
 
+## 📂 Dataset
 
+The project uses the **House Price India.csv** file included in the repository.
 
-## Installation
-```bash
-# create and activate virtual environment (example using venv)
-python -m venv ml_env
-# Windows
-ml_env\Scripts\activate
-# macOS/Linux
-source ml_env/bin/activate
+  * **Features:**
+      * The dataset contains various attributes of houses such as the number of bedrooms, bathrooms, living area, lot area, condition of the house, and the year it was built, among others.
+      * **Target Variable:** Price
 
-# install dependencies
-pip install -r requirements.txt
+## 🛠️ Technologies Used
 
+  * **Python**: Primary programming language.
+  * **Pandas**: For data manipulation and analysis.
+  * **NumPy**: For numerical computations.
+  * **Matplotlib & Seaborn**: For data visualization (correlation heatmaps, scatter plots, etc.).
+  * **Scikit-learn**: For model building, training, and evaluation.
 
-Usage
-Run notebook
+## 🚀 How to Run
 
-Open notebooks/Task_01_HousePricePrediction.ipynb and run the cells to explore the data, train the model and see evaluation results.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Harsh-4210/PRODIGY_ML_01.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd PRODIGY_ML_01
+    ```
+3.  **Install dependencies:**
+    Ensure you have Python installed. You can install the required libraries using pip:
+    ```bash
+    pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+    ```
+4.  **Launch the Notebook:**
+    Open the Jupyter Notebook to view the code and analysis.
+    ```bash
+    jupyter notebook "Task_01_HousePricePrediction.ipynb"
+    ```
 
-Train from command line
-python src/train.py --data data/HousePrice_sample.csv --output models/linear_reg_model.pkl
+## 📊 Methodology
 
-Make a prediction
-python src/predict.py --model models/linear_reg_model.pkl --sqft 1500 --bedrooms 3 --bathrooms 2
+1.  **Data Loading & Exploration:**
+      * Loading `House Price India.csv` into a Pandas DataFrame.
+      * Checking for missing values and understanding data distribution.
+2.  **Data Preprocessing:**
+      * Handling null values (if any).
+      * Selecting relevant features for the regression model.
+      * Splitting the data into training and testing sets.
+3.  **Model Training:**
+      * Initializing the Linear Regression model from Scikit-learn.
+      * Fitting the model on the training data.
+4.  **Evaluation:**
+      * Predicting prices on the test set.
+      * Calculating metrics like **Mean Absolute Error (MAE)**, **Mean Squared Error (MSE)**, and **R-squared score** to assess accuracy.
 
-Evaluation
+## 📈 Results
 
-This project reports standard regression metrics:
+  * The model provides a continuous output representing the estimated price of a house based on its inputs.
+  * Visualizations such as "Actual vs Predicted Prices" plots are used to demonstrate the model's effectiveness.
 
-Mean Absolute Error (MAE)
+## 🤝 Contributing
 
-Root Mean Squared Error (RMSE)
+Contributions are welcome\! If you'd like to improve the feature engineering or try more advanced models (like Random Forest or Gradient Boosting), feel free to fork the repo and submit a pull request.
 
-R² score
+## 📜 License
 
-Include a small section in the notebook that shows metric values and a residual plot.
-
-Future Improvements
-
-Add polynomial features or interaction terms
-
-Compare with regularized linear models (Ridge, Lasso)
-
-Add cross-validation and hyperparameter tuning
-
-Build a small FastAPI service for inference
-
----
-
-# requirements.txt
-python>=3.8
-numpy
-pandas
-matplotlib
-scikit-learn
-seaborn
-joblib
-jupyterlab
-
-
-
-
+This project is open-source and available for educational purposes.
